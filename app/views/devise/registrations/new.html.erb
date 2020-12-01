@@ -3,6 +3,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="form-inputs p-3">
       <h2>New account</h2>
+      <%= f.error_notification %>
       <%= f.input :user_name,
       required: false,
       autofocus: true,
