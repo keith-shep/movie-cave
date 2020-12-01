@@ -10,10 +10,11 @@ puts 'db cleaned'
 
 10.times do
 
+  user_name = Faker::Name.name
   email = Faker::Internet.email
   password = Faker::Internet.password
 
-  user = User.create(email: email, password: password)
+  user = User.create(user_name: user_name, email: email, password: password)
 
   puts "create owner"
 
@@ -26,7 +27,7 @@ puts 'db cleaned'
 
   puts "create cinema"
 
-  Cinema.create(
+  cinemas = Cinema.create(
     location: location,
     capacity: capacity,
     price: price,
