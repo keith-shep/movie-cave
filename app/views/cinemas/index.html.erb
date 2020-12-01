@@ -9,7 +9,7 @@
   <div class="col mb-4">
     <%= link_to cinema_path(cinema), class: "text-decoration-none color-white text-muted" do %>
     <div class="card h-100">
-      <%= image_tag images[index] %>
+      <%= image_tag images[index], class: "rounded"%>
       <div class="card-body">
         <h5 class="card-title"><%= cinema.description %></h5>
         <p class="card-text text-right">$<%= cinema.price %>/hr</p>
