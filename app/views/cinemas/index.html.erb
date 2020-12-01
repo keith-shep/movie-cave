@@ -1,16 +1,16 @@
-
-  <!-- cinema cards -->
-  <div class="row row-cols-3 row-cols-md-3 mt-10">
-        <% @cinemas.each do |cinema| %>
-    <div class="col mb-4">
-      <div class="card h-100">
-        <img src="http://placeimg.com/640/480/arch" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= cinema.description %></h5>
-          <p class="card-text text-right">$<%= cinema.price %>/hr</p>
-        </div>
+<div class="row row-cols-3 row-cols-md-3 mt-10">
+  <% @cinemas.each do |cinema| %>
+  <div class="col mb-4">
+    <%= link_to cinema_path(cinema), class: "text-decoration-none color-white text-muted" do %>
+    <div class="card h-100">
+      <img src="http://placeimg.com/640/480/arch" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= cinema.description %></h5>
+        <p class="card-text text-right">$<%= cinema.price %>/hr</p>
       </div>
     </div>
-        <% end %>
+    <% end %>
   </div>
+  <% end %>
+</div>
 
