@@ -22,7 +22,7 @@ puts 'db cleaned'
   capacity = rand(10)
   price = rand(100)
   movie_selection = Faker::Movie.title
-  description = Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote
+  description = Faker::Hipster.sentence
   screen_size = rand(40..100)
 
   puts "create cinema"
