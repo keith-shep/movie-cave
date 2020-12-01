@@ -23,9 +23,13 @@ class CinemasController < ApplicationController
   end
 
   def edit
+    @cinema = Cinema.find(params[:id])
   end
 
   def update
+    @cinema = Cinema.find(params[:id])
+    @cinema.update!(cinema_params)
+    redirect_to cinema_path(@cinema)
   end
 
   private
