@@ -1,2 +1,9 @@
-<h1>Cinemas#new</h1>
-<p>Find me in app/views/cinemas/new.html.erb</p>
+<%= simple_form_for(@cinema) do |f| %>
+  <%= f.input :location, placeholder: 'Katong'%>
+  <%= f.input :capacity, placeholder: '5 pax'%>
+  <%= f.input :price, label: 'Price to set', placeholder: '$15' %>
+  <%= f.input :movie_selection, placeholder: 'Everything by Martin Scorsese' %>
+  <%= f.input :description, placeholder: 'Complimentary snacks & Dolby Surround Sound 5.1. ' %>
+  <%= f.input :screen_size, placeholder: '60 inch' %>
+  <%= f.submit %>
+<% end %>

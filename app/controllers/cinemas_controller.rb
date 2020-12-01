@@ -9,6 +9,7 @@ class CinemasController < ApplicationController
   end
 
   def new
+    @cinema = Cinema.new
   end
 
   def create
