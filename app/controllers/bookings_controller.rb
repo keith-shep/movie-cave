@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = Booking.where(id: current_user.id)
   end
 
   def show
@@ -16,8 +17,7 @@ class BookingsController < ApplicationController
     @booking.cinema = @cinema
     @booking.user = current_user
     if @booking.save
-      #change to show after implementing show
-      redirect_to root_path
+      redirect_to user_bookings_path(current_user)
     else
       render 'new'
     end
