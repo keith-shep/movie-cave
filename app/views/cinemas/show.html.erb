@@ -34,7 +34,10 @@
     </div>
 
     <div class="card px-3 py-3 mw-75 text-muted border border-primary" style="max-width: 500px">
-      <h2 class="text-dark"> <%= @cinema.location %> </h2>
+      <div class="d-flex justify-content-between">
+        <h2 class="text-dark"> <%= @cinema.location %> </h2>
+        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani" >
+      </div>
       <p> <i class="fas fa-male"> </i> <%= @cinema.capacity %> pax </p>
       <p> <i class="fas fa-money-check-alt"></i> $<%= @cinema.price %> </p>
       <p> <i class="far fa-window-maximize"></i> <%= @cinema.movie_selection %> </p>
