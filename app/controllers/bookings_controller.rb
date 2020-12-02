@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @cinema = Cinema.find(params[:cinema_id])
+    @booking = Booking.new
   end
 
   def create
