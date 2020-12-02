@@ -1,4 +1,4 @@
-<% images = ["cinema_pics/1.jpeg", "cinema_pics/2.jpeg", "cinema_pics/3.jpeg"] %>
+<% images = ["cinema_pics/1.jpg", "cinema_pics/2.jpg", "cinema_pics/3.jpg"] %>
 <% 10.times do |index| %>
 <% img = "cinema_pics/" + (index+1).to_s + ".webp" %>
 <% images << img %>
@@ -12,11 +12,12 @@
       <%= image_tag images[index], class: "rounded"%>
       <div class="card-body">
         <h5 class="card-title"><%= cinema.description %></h5>
-        <p class="card-text text-right">$<%= cinema.price %>/hr</p>
       </div>
+        <p class="card-text text-right">$<%= cinema.price %>/hr</p>
     </div>
     <% end %>
   </div>
   <% end %>
 </div>
+
 
