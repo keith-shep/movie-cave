@@ -8,7 +8,7 @@ User.destroy_all
 
 puts 'db cleaned'
 
-10.times do
+5.times do
 
   user_name = Faker::Name.name
   email = Faker::Internet.email
