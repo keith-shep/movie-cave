@@ -1,4 +1,4 @@
-<% images = ["cinema_pics/1.jpeg", "cinema_pics/2.jpeg", "cinema_pics/3.jpeg"] %>
+<% images = ["cinema_pics/1.jpg", "cinema_pics/2.jpg", "cinema_pics/3.jpg"] %>
 <% 10.times do |index| %>
 <% img = "cinema_pics/" + (index+1).to_s + ".webp" %>
 <% images << img %>
@@ -7,6 +7,7 @@
 <div class="row row-cols-3 row-cols-md-3 mt-10">
   <% @cinemas.each_with_index do |cinema, index| %>
   <div class="col mb-4">
+
     <%#= link_to cinema_path(cinema), class: "text-decoration-none color-white text-muted" do %>
     <div class="card h-100 border-primary">
       <%= image_tag images[index], class: "card-img-top", style: "height: 300px"%>
@@ -24,10 +25,13 @@
             <p class="card-text ml-auto">$<%= cinema.price %>/hr</p>
           </div>
         <%= link_to "View", cinema_path(cinema), class: "btn btn-primary text-white mt-2 w-100" %>
+
       </div>
+        <p class="card-text text-right">$<%= cinema.price %>/hr</p>
     </div>
     <%# end %>
   </div>
   <% end %>
 </div>
+
 
