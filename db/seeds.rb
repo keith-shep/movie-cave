@@ -1,5 +1,13 @@
 require 'faker'
 
+description_array = ['Cozy Flat in the Heart of the Upper West Side',
+'8minutes walk from station',
+'NEW Modern Room',
+'Shining Solo Room in Astoria. Wifi & Netflix',
+'SOFA BED  LIVING ROOM, ONLY LADIES',
+'NEW Stylish private room close to  G train'
+]
+
 # Create 10 owners owning 10 cinemas individually
 puts 'cleaning db'
 
@@ -13,7 +21,6 @@ puts 'db cleaned'
   user_name = Faker::Name.name
   email = Faker::Internet.email
   password = Faker::Internet.password
-
   user = User.create(user_name: user_name, email: email, password: password)
 
   puts "create owner"
@@ -22,7 +29,7 @@ puts 'db cleaned'
   capacity = rand(1..10)
   price = rand(100)
   movie_selection = Faker::Movie.title
-  description = Faker::Hipster.sentence
+  description = description_array.sample
   screen_size = rand(40..100)
 
   puts "create cinema"
