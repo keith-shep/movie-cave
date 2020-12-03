@@ -1,0 +1,11 @@
+<% @bookings.each do |booking|%>
+
+<h2>Your bookings</h2>
+<div class="card py-2 px-2">
+  <p> Date: <%= booking.time %> </p>
+  <p> Date: <%= booking.date %> </p>
+  <p> Location: <%= booking.cinema.location %> </p>
+  <p> Desc: <%= booking.cinema.description %> </p>
+  <p> Capacity: <%= booking.quantity %> </p>
+</div>
+<% end %>

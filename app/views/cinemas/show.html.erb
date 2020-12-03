@@ -44,7 +44,7 @@
       <p> <i class="fas fa-tv"></i> <%= @cinema.screen_size %> inch screen </p>
       <h5> <%= @cinema.description %> </h5>
 
-      <%= link_to "Book", "#", class:"btn btn-primary my-2 text-white" %>
+      <%= link_to "Book", new_cinema_booking_path(@cinema), class:"btn btn-primary my-2 text-white" %>
       <%= link_to "Back", cinemas_path, class:"btn btn-outline-secondary text-whi" %>
     </div>
   </div>
