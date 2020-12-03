@@ -1,5 +1,5 @@
 <% images = ["cinema_pics/1.jpg", "cinema_pics/2.jpg", "cinema_pics/3.jpg"] %>
-<% 10.times do |index| %>
+<% 9.times do |index| %>
 <% img = "cinema_pics/" + (index+1).to_s + ".webp" %>
 <% images << img %>
 <% end %>
@@ -11,11 +11,11 @@
     <% @cinemas.each_with_index do |cinema, index| %>
     <div class="col mb-4">
       <div class="card h-100 border-primary">
-        <%# if cinema.photos.nil? %>
-          <%= image_tag images[index], class: "card-img-top", style: "height: 300px"%>
-          <%# else %>
-          <%#= cl_image_tag cinema.photos.key %>
-        <%# end %>
+        <% if cinema.photos.attached? %>
+          <%= cl_image_tag cinema.photos.first.key, class: "card-img-top", style: "height: 300px" %>
+          <% else %>
+          <%= image_tag images.sample, class: "card-img-top", style: "height: 300px"%>
+        <% end %>
         <div class="card-body ">
           <p class="card-title d-inline-block text-truncate" style="width: 100%"><%= cinema.description %></p>
             <div class="d-flex justify-content-center">
