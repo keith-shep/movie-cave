@@ -15,10 +15,11 @@ class CinemasController < ApplicationController
   def create
     @cinema = Cinema.new(cinema_params)
     @cinema.user = current_user
+    binding.pry
     if @cinema.save
       redirect_to cinema_path(@cinema)
     else
-      render 'new'
+      render :new
     end
   end
 
