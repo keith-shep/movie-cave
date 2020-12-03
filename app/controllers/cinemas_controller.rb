@@ -18,7 +18,7 @@ class CinemasController < ApplicationController
     if @cinema.save
       redirect_to cinema_path(@cinema)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -35,6 +35,6 @@ class CinemasController < ApplicationController
   private
 
   def cinema_params
-    params.require(:cinema).permit(:location, :capacity, :price, :movie_selection, :description, :screen_size)
+    params.require(:cinema).permit(:location, :capacity, :price, :movie_selection, :description, :screen_size, photos: [])
   end
 end
