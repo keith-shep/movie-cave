@@ -14,13 +14,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag images.sample, class: "", style: "height: 400px"%>
+          <%= image_tag images.sample, class: "", style: "height: 500px"%>
         </div>
         <div class="carousel-item">
-          <%= image_tag images.sample, class: "", style: "height: 400px"%>
+          <%= image_tag images.sample, class: "", style: "height: 500px"%>
         </div>
         <div class="carousel-item">
-          <%= image_tag images.sample, class: "", style: "height: 400px"%>
+          <%= image_tag images.sample, class: "", style: "height: 500px"%>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -36,16 +36,18 @@
     <div class="card px-3 py-3 mw-75 text-muted border border-primary" style="max-width: 500px">
       <div class="d-flex justify-content-between">
         <h2 class="text-dark"> <%= @cinema.location %> </h2>
-        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani" >
+        <div class="text-center">
+          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani">
+          <p>owner</p>
+        </div>
       </div>
       <p> <i class="fas fa-male"> </i> <%= @cinema.capacity %> pax </p>
       <p> <i class="fas fa-money-check-alt"></i> $<%= @cinema.price %> </p>
       <p> <i class="far fa-window-maximize"></i> <%= @cinema.movie_selection %> </p>
       <p> <i class="fas fa-tv"></i> <%= @cinema.screen_size %> inch screen </p>
       <h5> <%= @cinema.description %> </h5>
-
       <%= link_to "Book", new_cinema_booking_path(@cinema), class:"btn btn-primary my-2 text-white" %>
-      <%= link_to "Back", cinemas_path, class:"btn btn-outline-secondary text-whi" %>
+      <%= link_to "Back", cinemas_path, class:"btn btn-outline-secondary" %>
     </div>
   </div>
 </div>
