@@ -19,7 +19,7 @@ puts 'db cleaned'
   puts "create owner"
 
   location = Faker::Address.state
-  capacity = rand(10)
+  capacity = rand(1..10)
   price = rand(100)
   movie_selection = Faker::Movie.title
   description = Faker::Hipster.sentence
@@ -34,8 +34,9 @@ puts 'db cleaned'
     movie_selection: movie_selection,
     description: description,
     screen_size: screen_size,
-    user: user
+    user: user,
   )
+
 end
 
 puts 'done'

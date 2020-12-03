@@ -1,0 +1,10 @@
+<h2>Ready to book this cinema? Let's go!</h2>
+
+
+<%= simple_form_for([@cinema, @booking]) do |f| %>
+  <%= f.input :quantity, placeholder:"5 people" %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.submit %>
+<% end %>
+
