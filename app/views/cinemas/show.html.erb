@@ -4,7 +4,7 @@
 <% images << img %>
 <% end %>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="row row-cols-2 px-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -33,21 +33,33 @@
       </a>
     </div>
 
-    <div class="card px-3 py-3 mw-75 text-muted border border-primary" style="max-width: 500px">
-      <div class="d-flex justify-content-between">
-        <h2 class="text-dark"> <%= @cinema.location %> </h2>
-        <div class="text-center">
-          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani">
-          <p>owner</p>
+    <div class="card px-4 py-4 mw-75 text-muted border border-primary mh-100" style="max-width: 500px">
+      <div class="d-flex flex-column justify-content-between h-100">
+
+        <div class="details-top d-flex justify-content-between">
+          <h2 class="text-dark align-self-center"> <%= @cinema.location %> </h2>
+          <div class="text-center">
+            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani">
+            <p>Owner</p>
+          </div>
         </div>
+
+        <div class="details-middle">
+          <h5 class="pb-2"> <%= @cinema.description %> </h5>
+          <ul class="list-unstyled">
+            <li> <i class="fas fa-male fa-fw"> </i> <%= @cinema.capacity %> pax </li>
+            <li> <i class="fas fa-money-check-alt fa-fw"></i> $<%= @cinema.price %> </li>
+            <li> <i class="far fa-window-maximize fa-fw"></i> <%= @cinema.movie_selection %> </li>
+            <li> <i class="fas fa-tv fa-fw"></i> <%= @cinema.screen_size %> inch screen </li>
+          </ul>
+        </div>
+
+        <div class="details-bottom">
+          <%= link_to "Book", new_cinema_booking_path(@cinema), class:"btn btn-primary my-2 text-white w-100" %>
+          <%= link_to "Back", cinemas_path, class:"btn btn-outline-secondary w-100" %>
+        </div>
+
       </div>
-      <p> <i class="fas fa-male"> </i> <%= @cinema.capacity %> pax </p>
-      <p> <i class="fas fa-money-check-alt"></i> $<%= @cinema.price %> </p>
-      <p> <i class="far fa-window-maximize"></i> <%= @cinema.movie_selection %> </p>
-      <p> <i class="fas fa-tv"></i> <%= @cinema.screen_size %> inch screen </p>
-      <h5> <%= @cinema.description %> </h5>
-      <%= link_to "Book", new_cinema_booking_path(@cinema), class:"btn btn-primary my-2 text-white" %>
-      <%= link_to "Back", cinemas_path, class:"btn btn-outline-secondary" %>
     </div>
   </div>
 </div>
