@@ -4,29 +4,30 @@
 <% images << img %>
 <% end %>
 
-<div class="row row-cols-3 row-cols-md-3 mt-10">
-  <% @cinemas.each_with_index do |cinema, index| %>
-  <div class="col mb-4">
-    <div class="card h-100 border-primary">
-      <%= image_tag images[index], class: "card-img-top", style: "height: 300px"%>
-      <div class="card-body ">
-        <h6 class="card-title d-inline-block text-truncate" style="width: 100%"><%= cinema.description %></h6>
-          <div class="d-flex">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-              <div class="align-middle pl-2 text-info">
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-            <p class="card-text ml-auto">$<%= cinema.price %>/hr</p>
-          </div>
-        <%= link_to "View", cinema_path(cinema), class: "btn btn-primary text-white mt-2 w-100" %>
+<h2>Explore the caves</h2>
+
+<div class="container border mt-3">
+  <div class="row row-cols-3 row-cols-md-3 mt-3">
+    <% @cinemas.each_with_index do |cinema, index| %>
+    <div class="col mb-4">
+      <div class="card h-100 border-primary">
+        <%= image_tag images[index], class: "card-img-top", style: "height: 300px"%>
+        <div class="card-body ">
+          <p class="card-title d-inline-block text-truncate" style="width: 100%"><%= cinema.description %></p>
+            <div class="d-flex justify-content-center">
+                <div class="align-middle pr-2 text-info ">
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="mr-auto"><%= rand(1.0..5.0).round(2) %></p>
+                <p> <i class="fas fa-male"> </i> <%= cinema.capacity %> pax </p>
+              <p class="card-text ml-auto">$<%= cinema.price %>/hr</p>
+            </div>
+          <%= link_to "View More", cinema_path(cinema), class: "btn btn-primary text-white mt-2 w-100" %>
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
 
