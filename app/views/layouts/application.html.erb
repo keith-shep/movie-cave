@@ -16,8 +16,14 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/flashes' %>
 
+<% if current_page?(root_path) %>
+  <%= yield %>
+<% else %>
   <div class="container">
     <%= yield %>
   </div>
+<% end %>
+
 </body>
 </html>
+
