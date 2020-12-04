@@ -1,20 +1,21 @@
 require 'faker'
 
-description_array = ['Cozy Flat in the Heart of the Upper West Side',
-'8minutes walk from station',
-'NEW Modern Room',
-'Shining Solo Room in Astoria. Wifi & Netflix',
-'SOFA BED  LIVING ROOM, ONLY LADIES',
-'NEW Stylish private room close to  G train'
-]
-
-# Create 10 owners owning 10 cinemas individually
 puts 'cleaning db'
 
 Cinema.destroy_all
 User.destroy_all
 
 puts 'db cleaned'
+
+description_array = ['Cozy home theatre in the Heart of the City',
+'8 minutes walk from station',
+'Fully furnished Modern Plasma TV',
+'Shining Solo Room in Astoria. Wifi & Netflix',
+'Sofa bed livin room, ONLY LADIES',
+'NEW Stylish private room'
+]
+
+location_array = ['Bugis', 'City Hall', 'Jurong', 'Katong', 'Tampines', 'Dhoby Ghaut', 'Novena', 'Newton']
 
 5.times do
 
@@ -25,12 +26,12 @@ puts 'db cleaned'
 
   puts "create owner"
 
-  location = Faker::Address.state
-  capacity = rand(1..10)
+  location = location_array.sample
+  capacity = rand(4..15)
   price = rand(100)
   movie_selection = Faker::Movie.title
   description = description_array.sample
-  screen_size = rand(40..100)
+  screen_size = rand(40..90)
 
   puts "create cinema"
 
@@ -46,4 +47,4 @@ puts 'db cleaned'
 
 end
 
-puts 'done'
+puts 'done!'

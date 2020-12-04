@@ -1,4 +1,4 @@
-import flatpickr from "flatpickr";
+// import flatpickr from "flatpickr";
 
 const bookingForm = () => {
   const startDateInput = document.getElementById('booking_date');
