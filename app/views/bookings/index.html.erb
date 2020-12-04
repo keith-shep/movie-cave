@@ -2,8 +2,8 @@
   <h2 class="text-dark align-self-start">Confirmed bookings</h2>
 
   <% @bookings.each do |booking|%>
-    <div class="card px-3 py-3 mw-75 text-muted border border-primary mt-2">
-      <div class="d-flex justify-content-between">
+    <div class="card px-3 py-3 text-muted border border-primary m-2 w-100 shadow">
+      <div class="d-flex justify-content-between align-items-center">
         <h2 class="text-dark"> <%= booking.cinema.location %> </h2>
         <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/cveneziani" >
       </div>
