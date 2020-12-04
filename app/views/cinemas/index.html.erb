@@ -4,34 +4,57 @@
 <% images << img %>
 <% end %>
 
-<h2 class="text-dark">Explore the caves</h2>
 
-<div class="container border mt-3">
+<div class="d-flex justify-content-between form-inline">
+  <h2 class="text-dark">Explore the caves</h2>
+  <%= form_tag cinemas_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+    placeholder: "Find by location"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary text-white" %>
+    <% end %>
+  </div>
+
+
   <div class="row row-cols-3 row-cols-md-3 mt-3">
+
     <% @cinemas.each_with_index do |cinema, index| %>
     <div class="col mb-4">
       <div class="card h-100 border-primary">
         <% if cinema.photos.attached? %>
-          <%= cl_image_tag cinema.photos.first.key, class: "card-img-top", style: "height: 300px" %>
-          <% else %>
-          <%= image_tag images.sample, class: "card-img-top", style: "height: 300px"%>
+        <%= cl_image_tag cinema.photos.first.key, class: "card-img-top", style: "height: 300px" %>
+        <% else %>
+        <%= image_tag images[index], class: "card-img-top", style: "height: 300px"%>
         <% end %>
         <div class="card-body ">
           <p class="card-title d-inline-block text-truncate" style="width: 100%"><%= cinema.description %></p>
-            <div class="d-flex justify-content-center">
-                <div class="align-middle pr-2 text-info ">
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="mr-auto"><%= rand(1.0..5.0).round(2) %></p>
-                <p> <i class="fas fa-male"> </i> <%= cinema.capacity %> pax </p>
-              <p class="card-text ml-auto">$<%= cinema.price %>/hr</p>
+          <div class="d-flex justify-content-center">
+            <div class="align-middle pr-2 text-info ">
+              <i class="fas fa-star"></i>
             </div>
+            <p class="mr-auto"><%= rand(1.0..5.0).round(2) %></p>
+            <p> <i class="fas fa-male"> </i> <%= cinema.capacity %> pax </p>
+            <p class="card-text ml-auto">$<%= cinema.price %>/hr</p>
+          </div>
           <%= link_to "View More", cinema_path(cinema), class: "btn btn-primary text-white mt-2 w-100" %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
-</div>
+
+  <div class="d-flex mt-5">
+    <% if @cinemas.empty? %>
+    <%= image_tag 'sorry.jpg', class: "rounded"%>
+    <div class="container">
+      <h4 class=""> Sorry we don't have any cinemas in <strong><%= params[:query] %></strong> </h4>
+      <p>Try another search term or go back to main page</p>
+      <%= link_to "Go Back", cinemas_path %>
+    </div>
+    <% end %>
+  </div>
+
 
 

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+#Create search bar
+gem 'pg_search', '~> 2.3.0'
 # To add cloudinary
 gem 'cloudinary', '~> 1.16.0'
 # To security key
