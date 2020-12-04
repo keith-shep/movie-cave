@@ -10,7 +10,7 @@
   <div class="row row-cols-3 row-cols-md-3 mt-3">
     <% @cinemas.each_with_index do |cinema, index| %>
     <div class="col mb-4">
-      <div class="card h-100 border-primary">
+      <div class="card h-100 border-primary shadow">
         <% if cinema.photos.attached? %>
           <%= cl_image_tag cinema.photos.first.key, class: "card-img-top", style: "height: 300px" %>
           <% else %>
