@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center mt-5">
   <div class="h-100 d-inline-block border border-primary rounded p-4" style="width: 500px; background-color: white;">
-<%= simple_form_for(@cinema) do |f| %>
+<%= simple_form_for(@cinema, remote: true) do |f| %>
   <%= f.input :location, placeholder: 'Katong'%>
   <%= f.input :capacity, collection: ['1-5 pax', '6-10 pax', '11-15 pax'], as: :radio_buttons, selected: '1-5 pax', placeholder: '5 pax'%>
   <%= f.input :price, label: 'Set hourly rate (S$)', placeholder: '$15' %>

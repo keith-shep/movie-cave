@@ -2,6 +2,7 @@ require 'faker'
 
 puts 'cleaning db'
 
+Booking.destroy_all
 Cinema.destroy_all
 User.destroy_all
 

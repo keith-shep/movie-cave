@@ -1,7 +1,7 @@
 <div class="container w-50">
 <h2>Ready to book this cinema? Let's go!</h2>
     <% if current_user.id != @cinema.user_id  %>
-      <%= simple_form_for([@cinema, @booking]) do |f| %>
+      <%= simple_form_for([@cinema, @booking], remote: true) do |f| %>
         <%= f.input :quantity, placeholder:"5 people" %>
         <div id="cinema-booking-dates">
           <%= f.input :date, as: :string, type: :text %>
