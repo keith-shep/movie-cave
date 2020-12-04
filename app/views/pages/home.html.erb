@@ -1,9 +1,22 @@
-<div class="banner d-flex align-items-end" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path('flinestone.jpg') %>');">
-  <div class="container pl-5">
-    <h1>Watch your favourite movies at your own comfort in quality rooms!</h1>
-    <p>Rent cinema rooms at an affordable rate</p>
-    <!-- <a class="btn btn-flat btn-primary text-white" href="#">Sign up</a> -->
-    <%= link_to "Start browsing", cinemas_path, class: "btn btn-flat btn-primary btn-lg text-white"  %>
+
+
+
+<div class="text-white align-text-bottom" id="video_message">
+  <%= video_tag "videobackground-sm.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  <div class="hero-content h-100 d-flex flex-direction-column justify-content-center align-items-center">
+    <div class="align-text-bottom">
+      <h3>Watch your favourite movies at your own comfort in quality rooms!</h3>
+      <p>Rent cinema rooms at an affordable rate</p>
+      <%= link_to "Start browsing", cinemas_path, class: "btn btn-flat btn-primary btn-lg text-white" %>
+    </div>
   </div>
 </div>
+
+
+<!--   <div class="row row-cols-2 mt-2 pl-3 pr-3 ">
+    <div class="col"><h5>Watch your favourite movies at your own comfort in quality rooms!</h5><p>Rent cinema rooms at an affordable rate</p></div>
+    <div class="col text-right"><%#= link_to "Start browsing", cinemas_path, class: "btn btn-flat btn-primary btn-lg text-white text-right"  %></div>
+    <div class="col align-top"></div>
+    <div class="col"></div>
+  </div> -->
 
