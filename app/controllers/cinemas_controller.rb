@@ -1,7 +1,11 @@
 class CinemasController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    @cinemas = Cinema.all
+    if params[:query].present? # && @cinemas.location =~ params[:query]
+      @cinemas = Cinema.search_by_location(params[:query])
+    else
+      @cinemas = Cinema.all
+    end
   end
 
   def show
