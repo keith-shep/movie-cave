@@ -11,6 +11,7 @@ description_array = ['Cozy Flat in the Heart of the Upper West Side',
 # Create 10 owners owning 10 cinemas individually
 puts 'cleaning db'
 
+Booking.destroy_all
 Cinema.destroy_all
 User.destroy_all
 
