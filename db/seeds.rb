@@ -8,11 +8,11 @@ User.destroy_all
 puts 'db cleaned'
 
 description_array = ['Cozy home theatre in the Heart of the City',
-'8 minutes walk from Bugis station',
-'Fully furnished Modern Plasma TV in Jurong',
+'8 minutes walk from station',
+'Fully furnished Modern Plasma TV',
 'Shining Solo Room in Astoria. Wifi & Netflix',
 'Sofa bed livin room, ONLY LADIES',
-'NEW Stylish private room close to Orchard Road'
+'NEW Stylish private room'
 ]
 
 location_array = ['Bugis', 'City Hall', 'Jurong', 'Katong', 'Tampines', 'Dhoby Ghaut', 'Novena', 'Newton']
